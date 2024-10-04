@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenMIT Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 10px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .header {
+            background-color: #2196F3;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #2196F3;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2196F3;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #2196F3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #1A75FF;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .question {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+        .thanks {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+        <p style="font-size: 50px; margin-top: 20px;">OpenMITvalidator</p>
+    </div>
+    <div class="container">
+        <p class="question">What is your name?</p>
+        <form action="/validate" method="post">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <p class="question">What is your email address?</p>
+            <label for="email">Enter Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Validate</button>
+        </form>
+        {% if result %}
+            <p id="result" style="color: {{ color }};">{{ result }}</p>
+        {% endif %}
+        <p class="thanks">Thanks for using OpenMITvalidator 😊❤!</p>
+    </div>
+    <div class="footer">
+        <p class="copyright">&copy;  OpenMIT Validator All rights reserved by Omkesh and Abhijeet </p>
+    </div>
+</body>
+</html>
